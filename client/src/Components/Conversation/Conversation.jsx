@@ -10,7 +10,7 @@ function ConversationList({ user, conversation, messages, sendMessage }) {
         <Typography>User: {conversation?.user?.fullName}</Typography>
         <Typography>Host: {conversation?.host?.fullName || 'Not Assigned'}</Typography>
       </div>
-      <div style={{ maxHeight: '60vh' }}>
+      <div style={{ maxHeight: '55vh' }}>
         {messages.map((message) => (
           <div
             key={message._id}

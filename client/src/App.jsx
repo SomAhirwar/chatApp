@@ -6,6 +6,7 @@ function App() {
       style={{
         height: '100vh',
         width: '100vw',
+        overflow: 'auto',
         position: 'absolute',
         top: 0,
         left: 0,

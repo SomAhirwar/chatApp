@@ -21,6 +21,7 @@ import {
   CONVERSATION_PAGE,
   CONVERSATION_REQUEST_PAGE,
   ROLE_USER,
+  ROLE_HOST,
 } from '../../utils/constants'
 import SignupForm from '../SignupForm/SignupForm'
 import ConversationList from '../ConversationList/ConversationList'
@@ -66,6 +67,9 @@ export default function SimplePopper() {
         if (response.status === 'success') {
           setCurrentConversation(response.data.conversation)
           setPage(CONVERSATION_PAGE)
+          setConversationRequest((prev) =>
+            prev.filter((conversation) => conversation._id !== conversationId),
+          )
         }
       })
     }
@@ -158,7 +162,15 @@ export default function SimplePopper() {
         <ChatIcon sx={{ color: 'primary.main', height: '50px', width: '50px' }} />
       </IconButton>
       <Popper id={id} open={open} anchorEl={anchorEl}>
-        <Box style={{ border: '1px solid gray', padding: '20px', borderRadius: '20px' }}>
+        <Box
+          style={{
+            border: '1px solid gray',
+            padding: '20px',
+            borderRadius: '20px',
+            maxHeight: '80vh',
+            overflow: 'auto',
+          }}
+        >
           <FormControl fullWidth style={{ minWidth: '350px', paddingBottom: '30px' }}>
             <InputLabel id='demo-simple-select-label'>Navigate</InputLabel>
             <Select value={page} label='Age' onChange={(el) => setPage(el.target.value)}>
@@ -166,7 +178,7 @@ export default function SimplePopper() {
               {!user && <MenuItem value={LOGIN_PAGE}>{LOGIN_PAGE}</MenuItem>}
               {!user && <MenuItem value={SIGNUP_PAGE}>{SIGNUP_PAGE}</MenuItem>}
               {user && <MenuItem value={CONVERSATION_LIST_PAGE}>conversations</MenuItem>}
-              {user && (
+              {user && user.user.role === ROLE_HOST && (
                 <MenuItem value={CONVERSATION_REQUEST_PAGE}>conversations requests</MenuItem>
               )}
             </Select>

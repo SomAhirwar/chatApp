@@ -44,7 +44,7 @@ function ConversationList({ user, setCurrentConversation, setPage }) {
   ) : (
     <div
       style={{
-        maxHeight: '70vh',
+        maxHeight: '60vh',
         overflow: 'auto',
       }}
     >

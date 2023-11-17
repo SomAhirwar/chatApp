@@ -6,7 +6,12 @@ function ConversationRequestList({ conversations, handleClick }) {
       {conversations.map((conversation) => (
         <Box
           key={conversation._id}
-          style={{ cursor: 'pointer' }}
+          style={{
+            cursor: 'pointer',
+            padding: '10px',
+            backgroundColor: 'lightgrey',
+            marginBottom: '10px',
+          }}
           onClick={() => handleClick(conversation._id)}
         >
           <Typography>{conversation.user.fullName}</Typography>

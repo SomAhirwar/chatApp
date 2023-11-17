@@ -15,6 +15,7 @@ function LoginForm({ user, setUser, setPage }) {
     try {
       const response = await axios.post(`${BASE_URL}auth/login`, { email, password })
       setUser(response.data.data)
+      setPage(HOME_PAGE)
     } catch (err) {
       console.error('Error', err)
       if (err instanceof AxiosError)
