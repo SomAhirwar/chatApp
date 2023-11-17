@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## For using this service, paste below code in your HTML file just before </body> tag
+## For using this service, paste below code in your HTML file just before ending of body tag
 
 ```html
 <div id="chat"></div>
