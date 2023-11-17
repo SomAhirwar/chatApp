@@ -159,7 +159,7 @@ export default function SimplePopper() {
   return (
     <div style={{ transform: 'translate(-50px, -50px)' }}>
       <IconButton onClick={handleClick}>
-        <ChatIcon />
+        <ChatIcon sx={{ color: 'primary.main', height: '50px', width: '50px' }} />
       </IconButton>
       <Popper id={id} open={open} anchorEl={anchorEl}>
         <Box style={{ border: '1px solid gray', padding: '20px', borderRadius: '20px' }}>
