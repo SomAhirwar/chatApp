@@ -78,7 +78,6 @@ export default function SimplePopper() {
         if (response.status !== 'success') {
           setError(response.message)
         }
-        console.log('sendMessage')
       })
     }
   }
@@ -95,7 +94,6 @@ export default function SimplePopper() {
               },
             },
           )
-          console.log(response)
           setCurrentConversationMessages(response.data.data.reverse())
         } catch (err) {
           console.error('Error', err)
@@ -125,7 +123,6 @@ export default function SimplePopper() {
       }
       const handleConversationJoined = (conversationResponse) => {
         const conversation = conversationResponse.conversation
-        console.log(conversation, currentConversation)
         if (conversation?._id === currentConversation?._id) {
           setCurrentConversation(conversation)
         }
@@ -139,7 +136,6 @@ export default function SimplePopper() {
 
       const handleReceiveMessage = (message) => {
         setCurrentConversationMessages((prev) => [...prev, message])
-        console.log('rec', message)
       }
 
       socket.on('conversationRequest', handleConversationRequest)

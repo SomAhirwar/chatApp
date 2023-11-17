@@ -16,7 +16,6 @@ const handleCastErrorDb = (err) => {
 
 const handelDuplicateFieldsDB = (err) => {
   // handeling duplicate field error
-  console.log(err.keyValue)
   const duplicateKeys = Object.keys(err.keyValue)
   const message = `Duplicate field value for fields "${duplicateKeys.join(
     ', ',

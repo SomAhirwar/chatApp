@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Button, CircularProgress, TextField, Typography } from '@mui/material'
 import { useLayoutEffect, useState } from 'react'
 import { BASE_URL, HOME_PAGE } from '../../utils/constants'

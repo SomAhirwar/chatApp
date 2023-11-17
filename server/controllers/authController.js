@@ -40,7 +40,6 @@ exports.validateUserAuthorizationHeader = async (authorizationHeader) => {
     if (tokenArr.length !== 2) {
       throw new AppError('Invalid Token, Please log in again.', UNAUTHORIZED_CODE)
     }
-    // eslint-disable-next-line prefer-destructuring
     token = tokenArr[1]
   }
   if (!token) throw new AppError('You are not logged in, Please log in.', UNAUTHORIZED_CODE)
@@ -56,7 +55,6 @@ exports.validateUserAuthorizationHeader = async (authorizationHeader) => {
   return currUser
 }
 
-// eslint-disable-next-line consistent-return
 exports.protect = catchAsync(async (req, res, next) => {
   req.user = await exports.validateUserAuthorizationHeader(req.headers.authorization)
   next()

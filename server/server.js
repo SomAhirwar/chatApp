@@ -11,7 +11,6 @@ const cors = require('cors')
 const app = express()
 app.use(express.json())
 
-console.log(process.env.FRONTEND_URL)
 // setting CORS options
 const corsOptions = {
   origin: function (origin, callback) {
@@ -57,7 +56,6 @@ const server = createServer(app)
 const PORT = process.env.PORT
 
 server.listen(PORT * 1, () => {
-  // eslint-disable-next-line no-console
   console.log(`App running on port ${PORT}`)
 })
 

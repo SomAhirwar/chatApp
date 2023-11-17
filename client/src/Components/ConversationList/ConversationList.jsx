@@ -17,7 +17,6 @@ function ConversationList({ user, setCurrentConversation, setPage }) {
             Authorization: `Bearer ${user.token}`,
           },
         })
-        console.log(response)
         setConversations(response.data.data)
       } catch (err) {
         console.error('Error', err)
