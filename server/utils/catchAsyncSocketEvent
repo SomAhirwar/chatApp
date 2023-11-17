@@ -1,0 +1,22 @@
+const { FAIL } = require('./constants')
+const getErrorResponse = require('./getErrorResponse')
+
+module.exports = (handler) => {
+  const handleError = (err, callback) => {
+    callback({ status: FAIL, error: getErrorResponse(err) })
+  }
+
+  return (...args) => {
+    const [callback] = args.slice(-1)
+    try {
+      const ret = handler.apply(this, args)
+      if (ret && typeof ret.catch === 'function') {
+        // async handler
+        ret.catch((err) => handleError(err, callback))
+      }
+    } catch (err) {
+      // sync handler
+      handleError(err, callback)
+    }
+  }
+}

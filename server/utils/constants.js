@@ -1,0 +1,29 @@
+module.exports = {
+  // STATUS CODE
+  OK_CODE: 200,
+  CREATED_CODE: 201,
+  NO_CONTENT_CODE: 204,
+  BAD_REQUEST_CODE: 400,
+  UNAUTHORIZED_CODE: 401,
+  FORBIDDEN_CODE: 403,
+  NOT_FOUND_CODE: 404,
+  INTERNAL_SERVER_ERROR_CODE: 500,
+
+  CAST_ERROR: 'CastError',
+  VALIDATION_ERROR: 'ValidationError',
+  JSON_WEB_TOKEN_ERROR: 'JsonWebTokenError',
+  JSON_WEB_TOKEN_EXPIRED_ERROR: 'TokenExpiredError',
+  DUPLICATE_FIELD_ERROR_CODE: 11000,
+
+  FAIL: 'failed',
+  ERROR: 'error',
+  SUCCESS: 'success',
+
+  MIN_PASSWORD_LENGTH: 6,
+  MAX_MESSAGE_LENGTH: 300,
+
+  ROLE_USER: 'user',
+  ROLE_HOST: 'host',
+
+  HOST_ROOM: 'hostRoom',
+}
