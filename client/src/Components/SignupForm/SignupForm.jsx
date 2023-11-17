@@ -100,7 +100,7 @@ function SignupForm({ user, setUser, setPage }) {
 
       <FormControl fullWidth>
         <InputLabel id='demo-simple-select-label'>Age</InputLabel>
-        <Select value={role} label='Age' onChange={(el) => setRole(el.target.value)}>
+        <Select value={role} label='Role' onChange={(el) => setRole(el.target.value)}>
           <MenuItem value={ROLE_USER}>{ROLE_USER}</MenuItem>
           <MenuItem value={ROLE_HOST}>{ROLE_HOST}</MenuItem>
         </Select>

@@ -32,7 +32,10 @@ function ConversationList({ user, conversation, messages, sendMessage }) {
         />
         <Button
           variant='contained'
-          onClick={() => sendMessage({ conversationId: conversation._id, text })}
+          onClick={() => {
+            sendMessage({ conversationId: conversation._id, text })
+            setText('')
+          }}
         >
           Send
         </Button>
